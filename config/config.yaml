@@ -1,0 +1,210 @@
+# Analysis Configuration
+analysis:
+  directory_name: 'NCDIS_N200000_eicrecon_1_24_2_bth04mrad_eth50mrad_20250808'
+  analysis_event_type: 'NCDIS_events_created_with_Pythia'
+  selected_events: 200000
+  verbose: true
+  plot_verbose: true
+  detail_plot_verbose: false
+  version: '1.24.2'
+
+# Vertex Cuts
+vertex_cuts:
+  x:
+    min: 20
+    max: 30
+  y:
+    min: 20
+    max: 30
+  z:
+    min: 20
+    max: 30
+
+# File Paths
+file_paths:
+  NCDIS:
+    path: '/home/onok/2025/2025-5/eic/create_events/my_pythia/recon_out/pythia/rec_pythia8NCDIS_18x275_minQ2=1_beamEffects_xAngle=-0.025_hiDiv_1_200_N200000.root'
+    # path: '/home/onok/2025/2025-7/official_data/bg_data/merge/250601/BG_pythia8NCDIS_18x275_minQ2=1_beamEffects_xAngle=-0.025_hiDiv_1_to_1330.eicrecon.edm4eic.root'
+    # path: '/home/onok/2025/2025-7/official_data/dis/merge/250601/pythia8NCDIS_18x275_minQ2=1_beamEffects_xAngle=-0.025_hiDiv_1_to_1330.eicrecon.edm4eic.root'
+    # path: '/home/onok/2025/2025-7/official_data/dis/merge/250601/pythia8NCDIS_18x275_minQ2=1_beamEffects_xAngle=-0.025_hiDiv_1_to_50.eicrecon.edm4eic.root'
+    description: 'NCDIS_events_created_with_Pythia'
+    number_of_events: 300000
+    version: '1.24.2'
+    production_method: 'Using Pythia'
+  single_particle_pion:
+    path: '/home/onok/2025/2025-5/eic/create_events/my_pythia/recon_out/single_particle/rec_pi_uniform_N100000_eicrecon_ver1_24_2.root'
+    # path: '/home/onok/2025/2025-8/create_events/reco/rec_sP_pi_uniform_N100000_epic2025070.root'
+    description: 'single_particle_pion_events'
+    number_of_events: 100000
+    version: '1.24.2'
+    production_method: 'Single particle'
+  single_particle_kaon:
+    path: '/home/onok/2025/2025-8/create_events/reco/rec_sP_k_uniform_N100000_epic2025070.root'
+    # path: '/home/onok/2025/2025-5/eic/create_events/my_pythia/recon_out/single_particle/rec_kaon_uniform_N100000_eicrecon_ver1_24_2.root'
+    description: 'single_particle_kaon_events'
+    number_of_events: 100000
+    version: '1.24.2'
+  single_particle_proton:
+    path: '/home/onok/2025/2025-5/eic/create_events/my_pythia/recon_out/single_particle/rec_proton_uniform_N100000_eicrecon_ver1_24_2.root'
+    description: 'single_particle_proton_events'
+    number_of_events: 100000
+    version: '1.24.2'
+  NCDIS_old:
+    path: '/home/onok/eic/create_events/recon_out/pythia/EICrecon_ver24.07.0/EICrecon_ver_24_7_0_merged_1000files.root'
+    description: 'NCDIS_old_events_created_with_Pythia'
+    number_of_events: 950000
+    version: '1.15.0'
+    production_method: 'Using Pythia'
+
+# Branch Names
+branches:
+  mc:
+    mc_branch:
+      - 'MCParticles.PDG'
+      - 'MCParticles.generatorStatus'
+      - 'MCParticles.charge'
+      - 'MCParticles.momentum.x'
+      - 'MCParticles.momentum.y'
+      - 'MCParticles.momentum.z'
+      - 'MCParticles.vertex.x'
+      - 'MCParticles.vertex.y'
+      - 'MCParticles.vertex.z'
+      - 'MCParticles.momentumAtEndpoint.x'
+      - 'MCParticles.momentumAtEndpoint.y'
+      - 'MCParticles.momentumAtEndpoint.z'
+      - 'MCParticles.spin.x'
+      - 'MCParticles.spin.y'
+      - 'MCParticles.spin.z'
+      - 'MCParticles.colorFlow.a'
+      - 'MCParticles.colorFlow.b'
+      - 'MCParticles.parents_begin'
+      - 'MCParticles.parents_end'
+      - 'MCParticles.daughters_begin'
+      - 'MCParticles.daughters_end'
+      - 'MCParticles.endpoint.x'
+      - 'MCParticles.endpoint.y'
+      - 'MCParticles.endpoint.z'
+      - 'MCParticles.time'
+      - 'MCParticles.mass'
+
+  track:
+    segments_branch:
+      - 'CentralTrackSegments.length'
+      - 'CentralTrackSegments.lengthError'
+      - 'CentralTrackSegments.points_begin'
+      - 'CentralTrackSegments.points_end'
+      - '_CentralTrackSegments_track.index'
+      - '_CentralTrackSegments_track.collectionID'
+    points_branch:
+      - '_CentralTrackSegments_points.position.x'
+      - '_CentralTrackSegments_points.position.y'
+      - '_CentralTrackSegments_points.position.z'
+      - '_CentralTrackSegments_points.momentum.x'
+      - '_CentralTrackSegments_points.momentum.y'
+      - '_CentralTrackSegments_points.momentum.z'
+      - '_CentralTrackSegments_points.pathlength'
+      - '_CentralTrackSegments_points.pathlengthError'
+      - '_CentralTrackSegments_points.surface'
+      - '_CentralTrackSegments_points.system'
+      - '_CentralTrackSegments_points.positionError.xx'
+      - '_CentralTrackSegments_points.positionError.yy'
+      - '_CentralTrackSegments_points.positionError.zz'
+      - '_CentralTrackSegments_points.positionError.xy'
+      - '_CentralTrackSegments_points.positionError.xz'
+      - '_CentralTrackSegments_points.positionError.yz'
+      - '_CentralTrackSegments_points.momentumError.xx'
+      - '_CentralTrackSegments_points.momentumError.yy'
+      - '_CentralTrackSegments_points.momentumError.zz'
+      - '_CentralTrackSegments_points.momentumError.xy'
+      - '_CentralTrackSegments_points.momentumError.xz'
+      - '_CentralTrackSegments_points.momentumError.yz'
+      - '_CentralTrackSegments_points.time'
+      - '_CentralTrackSegments_points.timeError'
+      - '_CentralTrackSegments_points.theta'
+      - '_CentralTrackSegments_points.phi'
+      - '_CentralTrackSegments_points.directionError.xx'
+      - '_CentralTrackSegments_points.directionError.yy'
+      - '_CentralTrackSegments_points.directionError.xy'
+    vertices_branch:
+      - '_CentralTrackVertices_associatedParticles.index'
+      - '_CentralTrackVertices_associatedParticles.collectionID'
+
+  tof:
+    barrel:
+      rec_hits_branch:
+        - 'TOFBarrelRecHits.time'
+        - 'TOFBarrelRecHits.position.x'
+        - 'TOFBarrelRecHits.position.y'
+        - 'TOFBarrelRecHits.position.z'
+        - 'TOFBarrelRecHits.positionError.xx'
+        - 'TOFBarrelRecHits.positionError.yy'
+        - 'TOFBarrelRecHits.positionError.zz'
+        - 'TOFBarrelRecHits.cellID'
+        - 'TOFBarrelRecHits.timeError'
+        - 'TOFBarrelRecHits.edep'
+        - 'TOFBarrelRecHits.edepError'
+      rec_hits_branch_old:
+        - 'TOFBarrelRecHit.time'
+        - 'TOFBarrelRecHit.position.x'
+        - 'TOFBarrelRecHit.position.y'
+        - 'TOFBarrelRecHit.position.z'
+        - 'TOFBarrelRecHit.positionError.xx'
+        - 'TOFBarrelRecHit.positionError.yy'
+        - 'TOFBarrelRecHit.positionError.zz'
+        - 'TOFBarrelRecHit.cellID'
+        - 'TOFBarrelRecHit.timeError'
+        - 'TOFBarrelRecHit.edep'
+        - 'TOFBarrelRecHit.edepError'
+      raw_hits_branch:
+        - 'TOFBarrelHits.time'
+        - 'TOFBarrelHits.position.x'
+        - 'TOFBarrelHits.position.y'
+        - 'TOFBarrelHits.position.z'
+        - 'TOFBarrelHits.momentum.x'
+        - 'TOFBarrelHits.momentum.y'
+        - 'TOFBarrelHits.momentum.z'
+        - 'TOFBarrelHits.cellID'
+        - 'TOFBarrelHits.EDep'
+        - 'TOFBarrelHits.pathLength'
+        - 'TOFBarrelHits.quality'
+      hit_associations_branch:
+        - '_TOFBarreHitAssociations_rawHit.index'
+        - '_TOFBarreHitAssociations_rawHit.collectionID'
+      mc_associations_branch:
+        - '_TOFBarrelHits_MCParticle.index'
+        - '_TOFBarrelHits_MCParticle.collectionID'
+      mc_associations_ver1_24_2_branch:
+        - '_TOFBarrelHits_particle.index'
+    endcap:
+      rec_hits_branch:
+        - 'TOFEndcapRecHits.time'
+        - 'TOFEndcapRecHits.position.x'
+        - 'TOFEndcapRecHits.position.y'
+        - 'TOFEndcapRecHits.position.z'
+        - 'TOFEndcapRecHits.positionError.xx'
+        - 'TOFEndcapRecHits.positionError.yy'
+        - 'TOFEndcapRecHits.positionError.zz'
+        - 'TOFEndcapRecHits.cellID'
+        - 'TOFEndcapRecHits.timeError'
+        - 'TOFEndcapRecHits.edep'
+        - 'TOFEndcapRecHits.edepError'
+      raw_hits_branch:
+        - 'TOFEndcapHits.time'
+        - 'TOFEndcapHits.position.x'
+        - 'TOFEndcapHits.position.y'
+        - 'TOFEndcapHits.position.z'
+        - 'TOFEndcapHits.momentum.x'
+        - 'TOFEndcapHits.momentum.y'
+        - 'TOFEndcapHits.momentum.z'
+        - 'TOFEndcapHits.cellID'
+        - 'TOFEndcapHits.EDep'
+        - 'TOFEndcapHits.pathLength'
+        - 'TOFEndcapHits.quality'
+      hit_associations_branch:
+        - '_TOFEndcapHitAssociatedPoints.index'
+        - '_TOFEndcapHitAssociatedPoints.collectionID'
+      mc_associations_branch:
+        - '_TOFEndcapHits_MCParticle.index'
+        - '_TOFEndcapHits_MCParticle.collectionID'
+      mc_associations_ver1_24_2_branch:
+        - '_TOFEndcapHits_particle.index'
