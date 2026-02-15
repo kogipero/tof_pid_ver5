@@ -5,6 +5,8 @@ import ROOT as r
 from matplotlib.colors import LogNorm
 import awkward as ak
 
+# helper functions for plotting
+
 # draw matplotlib plots 
 def prepare_axis(rangex=None, rangey=None, title='', xlabel='', ylabel=''):
     fig, ax = plt.subplots(1, 1, figsize=(8, 6), dpi=100)
