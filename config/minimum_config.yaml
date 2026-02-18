@@ -1,14 +1,14 @@
 # Analysis Configuration
 analysis:
-  directory_name: 'sP_proton_epic25100_20260106_N100000'
-  analysis_event_type: 'single_particle_proton_events'
-  selected_events: 100000
+  directory_name: 'sp_pion_test_epic25100_20260218_N5000'
+  analysis_event_type: 'single_particle_pion_events'
+  selected_events: 5000
   verbose: true
   plot_verbose: true
   detail_plot_verbose: false
   version: '1.24.2'
 
-# Vertex Cuts
+
 vertex_cuts:
   x:
     min: 20
@@ -22,45 +22,22 @@ vertex_cuts:
 
 # File Paths
 file_paths:
-  NCDIS:
-    # path: '/home/onok/2025/2025-5/eic/create_events/my_pythia/recon_out/pythia/rec_pythia8NCDIS_18x275_minQ2=1_beamEffects_xAngle=-0.025_hiDiv_1_100_N100000.root'
-    # path: '/home/onok/2025/2025-7/official_data/bg_data/merge/250601/BG_pythia8NCDIS_18x275_minQ2=1_beamEffects_xAngle=-0.025_hiDiv_1_to_1330.eicrecon.edm4eic.root'
-    # path: '/home/onok/2025/2025-7/official_data/dis/merge/250601/pythia8NCDIS_18x275_minQ2=1_beamEffects_xAngle=-0.025_hiDiv_1_to_1330.eicrecon.edm4eic.root'
-    # path: '/home/onok/2025/2025-8/official_data/epic_25070/ncdis_18x275_minq2_1/merge/rec_pythia8NCDIS_18x275_minQ2=1_beamEffects_xAngle=-0.025_hiDiv_1_to_100_epic25070.root'
-    path: '/home/onok/2025/2025-12/official_data/minQ2=1/epic_25100_rec_pythia8_NCDIS_18x275_minq2_1hidiv_1_0999_files_merge.root'
-    # path: '/home/onok/2025/2025-8/official_data/epic_25070/ncdis_18x275_minq2_1_20251219/minQ2=1/rec_pythia8_NCDIS_18x275_minq2_1hidiv_1_1000_only_file_merge.root'
-    description: 'NCDIS_events_created_with_Pythia'
-    number_of_events: 500000
-    version: '1.24.2'
-    production_method: 'Using Pythia'
   single_particle_pion:
-    # path: '/home/onok/2025/2025-5/eic/create_events/my_pythia/recon_out/single_particle/rec_pi_uniform_N100000_eicrecon_ver1_24_2.root'
     path: '/home/onok/2025/2025-12/create_events/rec_epic_25100_eicrecon1320_sP_pi-_uniform_N100000_mom_01_5gev.root'
-    # path: '/home/onok/2025/2025-9-2/create_events/single_particle/pi/rec_sP_pi_uniform_N100000_epic2025080_eicrecon_1_28_0.root'
     description: 'single_particle_pion_events'
     number_of_events: 100000
     version: '1.24.2'
     production_method: 'Single particle'
   single_particle_kaon:
     path: '/home/onok/2025/2025-12/create_events/rec_epic_25100_eicrecon1320_sP_k-_uniform_N100000_mom_01_5gev.root'
-    # path: '/home/onok/2025/2025-5/eic/create_events/my_pythia/recon_out/single_particle/rec_kaon_uniform_N100000_eicrecon_ver1_24_2.root'
-    # path: '/home/onok/2025/2025-9-2/create_events/single_particle/k/rec_sP_k_uniform_N100000_epic2025080_eicrecon_1_28_0.root'
     description: 'single_particle_kaon_events'
     number_of_events: 100000
     version: '1.24.2'
   single_particle_proton:
-    # path: '/home/onok/2025/2025-5/eic/create_events/my_pythia/recon_out/single_particle/rec_proton_uniform_N100000_eicrecon_ver1_24_2.root'
     path: '/home/onok/2025/2025-12/create_events/rec_epic_25100_eicrecon1320_sP_p+_uniform_N100000_mom_01_5gev.root'
-    # path: '/home/onok/2025/2025-9-2/create_events/single_particle/p/rec_sP_p_uniform_N100000_epic2025080_eicrecon_1_28_0.root'
     description: 'single_particle_proton_events'
     number_of_events: 100000
     version: '1.24.2'
-  NCDIS_old:
-    path: '/home/onok/eic/create_events/recon_out/pythia/EICrecon_ver24.07.0/EICrecon_ver_24_7_0_merged_1000files.root'
-    description: 'NCDIS_old_events_created_with_Pythia'
-    number_of_events: 950000
-    version: '1.15.0'
-    production_method: 'Using Pythia'
 
 # Branch Names
 branches:
