@@ -131,14 +131,23 @@ branches:
     tof_pos_x:         events/TOFBarrelHits.position.x
     # ...
   track:
+    segments_branch:
+      - 'CentralTrackSegments.length'
+      - 'CentralTrackSegments.lengthError'
+      - 'CentralTrackSegments.points_begin'
+      - 'CentralTrackSegments.points_end'
+      - '_CentralTrackSegments_track.index'
+      - '_CentralTrackSegments_track.collectionID'
     points_branch:
-      - events/SiBarrelHits.position.x
-      - events/SiBarrelHits.position.y
-      - events/SiBarrelHits.position.z
-      - events/SiBarrelHits.momentum.x
-      - events/SiBarrelHits.momentum.y
-      - events/SiBarrelHits.momentum.z
-      - events/SiBarrelHits.pathlength
+      - '_CentralTrackSegments_points.position.x'
+      - '_CentralTrackSegments_points.position.y'
+      - '_CentralTrackSegments_points.position.z'
+      - '_CentralTrackSegments_points.momentum.x'
+      - '_CentralTrackSegments_points.momentum.y'
+      - '_CentralTrackSegments_points.momentum.z'
+      - '_CentralTrackSegments_points.pathlength'
+      - '_CentralTrackSegments_points.pathlengthError'
+      # ...
 ```
 
 ---
@@ -151,7 +160,7 @@ python analyze_script.py --config ./config/minimum_config.yaml ∖
 
 ```
 
-* `--filetype` には YAML の `file_paths` を指定
+* `--filetype` には YAML の `single_particle_pion`か`single_particle_kaon`か`single_particle_proton`か`NCDIS` を指定
 * 生成物は `out/<directory_name>/` に保存されます
 
 ---
